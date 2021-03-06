@@ -20,6 +20,12 @@ app.get("/", (request, response) => {
 });
 
 // takes care of a normal request on the about page
+// /contact
+// app.get("/about", (request, response) => {
+//   response.send(`<h3>This is the contact page</h3>`);
+// });
+// /about -> where the request is going to :1st argument / parameter
+// function part -> what to execute when said request is received
 app.get("/about", (request, response) => {
   response.sendFile(__dirname, +"/views/about.html");
 });

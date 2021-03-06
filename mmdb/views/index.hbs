@@ -1,0 +1,38 @@
+<h1>Welcome to home page, {{user.name}}</h1>
+<h2>We ve got fun and games</h2>
+
+{{#if user.canWatchAllMovies}}
+<h2>You can watch all movies</h2>
+{{else}}
+<h2>Because you are too young, you cant watch all movies</h2>
+{{/if}}
+
+{{#if user.isStudent}}
+<p>
+
+   You can get student discount
+</p>
+{{/if}}
+
+{{!-- Here I know want to display a list of the movies --}}
+
+{{#each movies}}
+<p>{{title}}</p>
+{{/each}}
+
+{{#if user.favorites}}
+Go and click here to check all your favorite movies
+
+{{/if}}
+
+{{#with user}}
+<h1>
+   {{name}}
+
+</h1>
+{{/with}}
+
+{{!-- if !user.favorites --}}
+{{#unless user.favorites}}
+<h2>Woo wooo</h2>
+{{/unless}}
